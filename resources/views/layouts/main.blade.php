@@ -39,7 +39,7 @@
 </head>
 
 <body>
-
+    @include('sweetalert::alert')
   <!-- ======= Header ======= -->
   @include('layouts.inc.header')
   <!-- End Header -->
@@ -96,6 +96,8 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
+
+  @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
 </body>
 
