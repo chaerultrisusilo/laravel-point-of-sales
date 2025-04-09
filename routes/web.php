@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UsersController;
 
 Route::get('/', function () {
@@ -27,3 +28,6 @@ Route::post('action-login', [LoginController::class, 'actionLogin']);
 Route::resource('dashboard', DashboardController::class);
 Route::resource('categories', CategoriesController::class);
 Route::resource('product', ProductController::class);
+Route::resource('pos', TransactionController::class);
+
+Route::get('get-product/{id}', [TransactionController::class, 'getProduct']);

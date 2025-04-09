@@ -24,35 +24,34 @@
                         </thead>
                         <tbody>
                             @php $no=1; @endphp
-                            @foreach ($datas as $index => $data)
-                                <tr>
-                                    <td>{{ $index += 1 }}</td>
-                                    <td><img src="" alt=""></td>
-                                    <td>{{ $data->category->category_name }}</td>
-                                    <td>{{ $data->product_name }}</td>
-                                    <td>{{ $data->product_price }}</td>
-                                    <td>{{ $data->is_active ? 'publish' : 'Draft' }}</td>
-                                    <td>
-                                        <a href="{{ route('product.edit', $data->id) }}" class="btn btn-sm btn-secondary">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                        <form class="d-inline" action="{{ route('product.destroy', $data->id) }}" method="post">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit" class="btn btn-sm btn-warning">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                    @foreach ($datas as $index => $data)
+                                        <tr>
+                                            <td>{{ $index += 1 }}</td>
+                                            <td>{{ $data->category_name }}</td>
+                                            <td>
+                                                <a href="{{ route('categories.edit', $data->id) }}"
+                                                    class="btn btn-sm btn-secondary">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
+                                                <form class="d-inline" action="{{ route('categories.destroy', $data->id) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="btn btn-sm btn-warning">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
         </div>
-    </div>
-
-</section>
+    </section>
 @endsection
-

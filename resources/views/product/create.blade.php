@@ -6,16 +6,17 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
+
                         <h5 class="card-title">Add New Product</h5>
                         <div align="right" class="mt-2">
                             <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
                         </div>
                         <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
-
                             <div class="mb-3">
                                 <label for="" class="col-form-label">Product Name *</label>
-                                <input type="text" class="form-control" name="product_name" placeholder="Enter Product Name" required>
+                                <input type="text" class="form-control" name="product_name"
+                                    placeholder="Enter Product Name" required>
                             </div>
                             <div class="mb-3">
                                 <label for="" class="col-form-label">Category Name *</label>
@@ -27,26 +28,30 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="" class="col-form-label">Product Price *</label>
-                                <input name="text" class="form-control" name="product_price">
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="col-form-label">Product Photo </label>
-                                <input type="file" class="form-control" name="product_photo">
+                                <label for="" class="col-form-label">product Price *</label>
+                                <input type="number" class="form-control" name="product_price"
+                                    placeholder="Enter Product Price" required>
                             </div>
                             <div class="mb-3">
                                 <label for="" class="col-form-label">Product Description </label>
-                                <input type="text" class="form-control" name="category_name">
+                                <input type="text" class="form-control" name="product_description"
+                                    placeholder="Enter Product Description">
                             </div>
                             <div class="mb-3">
-                                <label for="" class="col-form-label">Status *</label>
+                                <label for="" class="col-form-label">Product Photo </label>
+                                <input type="file" name="product_photo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="col-form-label">Status </label>
                                 <br>
-                                Publish<input type="radio" name="is_active" value="1" checked>
-                                Draft<input type="radio" name="is_active" value="0">
+                                Publish <input type="radio" name="is_active" value="1" checked>
+                                Draft <input type="radio" name="is_active" value="0">
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Save</button>
-                                <button type="reset" class="btn btn-danger">Cancel</button>
+                                <button class="btn btn-primary" type="submit">Save </button>
+                                <button class="btn btn-danger" type="reset">Cancel </button>
+
+                            </div>
                         </form>
                     </div>
                 </div>

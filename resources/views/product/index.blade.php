@@ -12,7 +12,7 @@
                     <h5 class="card-title">{{ $title ?? '' }}</h5>
                     <div class="mt-4 mb-3">
                         <div align="right" class="mb-3">
-                            <a class="btn btn-primary" href="{{route('categories.create')}}">Add Categories</a>
+                            <a class="btn btn-primary" href="{{route('product.create')}}">Add Product</a>
                     </div>
                     <table class="table table-bordered">
                         <thead>
@@ -31,10 +31,11 @@
                             @foreach ($datas as $index => $data)
                                 <tr>
                                     <td>{{ $index += 1 }}</td>
-                                    <td><img width="100" src="{{ assets('storage/' . $data->product_photo) }}" alt=""></td>
                                     <td>{{ $data->category->category_name }}</td>
                                     <td>{{ $data->product_name }}</td>
                                     <td>{{ $data->product_price }}</td>
+                                    <td><img width="100" src="{{ asset('storage/' . $data->product_photo) }}"
+                                        alt=""></td>
                                     <td>{{ $data->is_active ? 'publish' : 'Draft' }}</td>
                                     <td>
                                         <a href="{{ route('product.edit', $data->id) }}" class="btn btn-sm btn-secondary">
